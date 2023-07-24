@@ -1,0 +1,4 @@
+.street-and-suite {
+  display: flex;
+  flex-direction: row;
+}
