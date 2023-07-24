@@ -1,0 +1,16 @@
+.text-blob-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.genericText {
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italics {
+  font-style: italic;
+}
