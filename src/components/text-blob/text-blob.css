@@ -14,3 +14,12 @@
 .italics {
   font-style: italic;
 }
+
+.error {
+  color: red;
+}
+
+.children {
+  padding-left: 1em;
+  padding-top: 0em;
+}

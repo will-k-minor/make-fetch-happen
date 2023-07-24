@@ -8,13 +8,19 @@ export const useProfile = () => {
   const [userData, setUserData] = useState<ProfileResponse | null>(null);
   const [error, setError] = useState<string>("");
 
-  const getUserData = async (userId: number) => {
+  const getUserData = (userId: number) => {
     setIsLoading(true);
     fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
       .then((response: Response) => {
         setIsLoading(false);
-        console.log(response);
-        return response;
+        if (response.ok) {
+          return response.json();
+        }
+        setIsLoading(false);
+        throw "Something went wrong";
+      })
+      .then((data: ProfileResponse) => {
+        setUserData(data);
       })
       .catch((err) => {
         setError("Something went wrong");
@@ -23,5 +29,5 @@ export const useProfile = () => {
     setIsLoading(false);
   };
 
-  return { getUserData, isLoading, error };
+  return { getUserData, isLoading, error, userData };
 };

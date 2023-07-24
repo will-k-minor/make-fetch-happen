@@ -7,8 +7,8 @@ export const TextBlob: FC<{ label?: string; children: JSX.Element }> = ({
 }) => {
   return (
     <div className="text-blob-container">
-      {label && <p className="bold">{label}</p>}
-      <p>{children}</p>
+      {label && <span className="bold">{label}</span>}
+      <div className="children">{children}</div>
     </div>
   );
 };
